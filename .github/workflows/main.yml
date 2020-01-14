@@ -1,0 +1,21 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup Java JDK
+      uses: actions/setup-java@v1.3.0
+      with:
+        java-version: 1.8
+        java-package: jdk
+   
+    - name: Run a multi-line script
+      run: |
+        mvn -f pom.xml clean package
+        ls gameoflife-web/target
