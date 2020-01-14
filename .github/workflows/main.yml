@@ -19,3 +19,4 @@ jobs:
       run: |
         mvn -f pom.xml clean package
         ls gameoflife-web/target
+        echo "Hello"
