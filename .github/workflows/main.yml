@@ -20,3 +20,10 @@ jobs:
         mvn -f pom.xml clean package
         ls gameoflife-web/target
         echo "Hello"
+    - name: Azure WebApp
+      uses: Azure/webapps-deploy@v1
+      with:
+        publish-profile: ${{secrets.publishprof}}}}
+        app-name: gameoflifeaz
+        package: gameoflife-web/target/*.war
+ 
